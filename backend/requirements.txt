@@ -1,6 +1,21 @@
+# fastapi
+# uvicorn
+# sqlalchemy
+# openai
+# python-dotenv
+# pydantic
 fastapi
 uvicorn
 sqlalchemy
 openai
 python-dotenv
 pydantic
+langchain
+langchain-community
+langchain-core
+groq
+redis
+httpx
+jinja2
+python-multipart
+aiofiles
