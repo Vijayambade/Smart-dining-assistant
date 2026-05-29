@@ -1,0 +1,40 @@
+# Dependency directories
+node_modules/
+backend/venv/
+backend/.venv/
+
+# Next.js build output
+.next/
+frontend/.next/
+out/
+build/
+
+# Python caching & environments
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+backend/__pycache__/
+backend/*/__pycache__/
+backend/*/*/__pycache__/
+
+# Local databases
+backend/dining.db
+*.db
+*.sqlite3
+
+# Environment files
+.env
+.env.local
+.env.production
+backend/.env
+frontend/.env.local
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# TypeScript build info
+*.tsbuildinfo
+frontend/next-env.d.ts
