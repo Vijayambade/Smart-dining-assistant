@@ -1,10 +1,9 @@
 import axios from "axios";
 
-// const BASE = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000";
-const BASE  = process.env.NEXT_PUBLIC_API_URL;
+const BASE = process.env.NEXT_PUBLIC_API_URL || "https://smart-dining-backend-li4x.onrender.com";
 
-export async function apicall(path: string,options={}) {
-  const res = await fetch(`${BASE}${path}`,options);
+export async function apicall(path: string, options = {}) {
+  const res = await fetch(`${BASE}${path}`, options);
   if (!res.ok) {
     throw new Error(`API request failed: ${res.status} ${res.statusText}`);
   }
