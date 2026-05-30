@@ -1,7 +1,15 @@
 import axios from "axios";
 
 // const BASE = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000";
-const BASE = process.env.NEXT_PUBLIC_API_URL;
+const BASE  = process.env.NEXT_PUBLIC_API_URL;
+
+export async function apicall(path: string,options={}) {
+  const res = await fetch(`${BASE}${path}`,options);
+  if (!res.ok) {
+    throw new Error(`API request failed: ${res.status} ${res.statusText}`);
+  }
+  return res.json();
+}
 
 export const api = axios.create({ baseURL: BASE });
 
