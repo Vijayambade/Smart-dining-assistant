@@ -1,9 +1,17 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from app.database import engine, Base
+from app.database import engine, Base, SessionLocal
 from app.api import menu, cart, session, orders, ai   # ← add ai
+from app.seeder import auto_seed_db
 
 Base.metadata.create_all(bind=engine)
+
+# Auto-seed the database on startup if empty
+db = SessionLocal()
+try:
+    auto_seed_db(db)
+finally:
+    db.close()
 
 app = FastAPI(title="Smart Dining Assistant API", version="1.0")
 
